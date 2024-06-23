@@ -27,25 +27,25 @@ const ProjectTwo = () => {
       <SwiperSlide>
         <img
           className="lg:p-5 lg:h-[500px] lg:w-[700px]"
-          src="../../../../public/Project2/Project2Collage1.png"
+          src="/Project2Collage1.png"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
           className="lg:p-5 lg:h-[500px] lg:w-[700px]"
-          src="../../../../public/Project2/Project2Collage2.png"
+          src="/Project2Collage2.png"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
           className="lg:p-5 lg:h-[500px] lg:w-[700px]"
-          src="../../../../public/Project2/Project2Collage3.png"
+          src="/Project2Collage3.png"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
           className="lg:p-5 lg:h-[500px] lg:w-[700px]"
-          src="../../../../public/Project2/Project2Collage4.png"
+          src="/Project2Collage4.png"
         />
       </SwiperSlide>
     </Swiper>

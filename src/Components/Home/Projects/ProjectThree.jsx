@@ -27,13 +27,13 @@ const ProjectThree = () => {
       <SwiperSlide>
         <img
           className="lg:p-5 lg:h-[500px] lg:w-[700px]"
-          src="../../../../public/Project3/Project3Collage1.png"
+          src="/Project3Collage1.png"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
           className="lg:p-5 lg:h-[500px] lg:w-[700px]"
-          src="../../../../public/Project3/Project3Collage2.png"
+          src="/Project3Collage2.png"
         />
       </SwiperSlide>
       
