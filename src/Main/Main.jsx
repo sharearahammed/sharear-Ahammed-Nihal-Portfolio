@@ -4,7 +4,7 @@ import Footer from "../Components/Shreared/Footer/Footer";
 
 const Main = () => {
     return (
-        <div>
+        <div className="dark:bg-slate-800 dark:text-white">
             <div className="max-w-7xl mx-auto">
             <Navbar />
             </div>

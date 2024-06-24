@@ -58,7 +58,7 @@ const ProjectTwo = () => {
         A responsive and user-friendly hotel booking platform. It features secure user authentication with JWT, seamless Stripe payment integration, and automated email notifications. Users can book, update, review, and cancel reservations with ease. Built with React JS, MongoDB, Firebase, Tailwind CSS, and NodeJS, it ensures a modern and efficient user experience.
         </p>
       </div>
-      <div className="relative lg:px-10 pb-16 bg-white">
+      <div className="relative lg:px-10 pb-16">
         <ul className="text-gray-500 text-sm list-disc">
           <li>
             Proficient in secure user authentication, Multiple payment options,

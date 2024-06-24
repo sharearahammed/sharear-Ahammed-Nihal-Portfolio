@@ -58,7 +58,7 @@ const ProjectOne = () => {
         The Micro-Task and Earning Platform is a responsive, secure web application designed for crowdsourcing tasks, where users complete micro-tasks to earn rewards. It supports Workers, Task-Creators, and Admins, each with specific functionalities. Workers can view tasks, submit completions, and withdraw earnings, while Task-Creators manage tasks and payments. Admins oversee operations and handle financial transactions. The platform features secure authentication, real-time notifications, and Stripe integration for purchases, offering an intuitive and efficient user experience.
         </p>
       </div>
-      <div className="relative lg:px-10 pb-16 bg-white">
+      <div className="relative lg:px-10 pb-16">
         <ul className="text-gray-500 text-sm list-disc">
           <li>
             Proficient in secure user authentication, Multiple payment options,

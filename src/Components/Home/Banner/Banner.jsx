@@ -4,7 +4,7 @@ import 'animate.css';
 /* eslint-disable react/no-unescaped-entities */
 const Banner = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div id="home" className="dark:bg-slate-800 flex justify-center items-center">
       <div className="relative flex justify-center items-center">
       <video
         autoPlay
@@ -12,7 +12,7 @@ const Banner = () => {
         muted
         className="bg-cover rounded-tl-full"
       >
-        <source src="/banner.mp4" type="video/mp4" />
+        <source src="/banner.mp4" type="video/mp4" />max-w-7xl mx-auto
       </video>
       <div className="bg-black bg-opacity-35 w-full h-full px-5 md:px-20 text-white absolute top-0 flex justify-between items-center lg:gap-[350px]">
         <div>
@@ -29,7 +29,7 @@ const Banner = () => {
                     <button className="text-[8px] md:text-xl bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white px-2 py-1 md:px-4 md:py-3 rounded-md md:rounded-lg">View My Works</button>
                     </a>
                     <a href="#contact">
-                    <button className="text-[8px] md:text-xl hover:bg-gray-600 text-white px-2 py-1 md:px-4 md:py-3 rounded-md  md:rounded-lg">Contact Me</button>
+                    <button className="text-[8px] md:text-xl hover:bg-black text-white px-2 py-1 md:px-4 md:py-3 rounded-md  md:rounded-lg">Contact Me</button>
                     </a>
                 </div>
         </div>

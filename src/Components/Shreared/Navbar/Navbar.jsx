@@ -1,26 +1,53 @@
+import { useEffect, useState } from "react";
+import DarkMode from "../../DarkMode/DarkMode";
+
+
 const Navbar = () => {
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const targetSection = document.getElementById('about');
+    if (targetSection) {
+      const sectionTop = targetSection.offsetTop;
+      if (scrollTop > sectionTop) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
     const links = (
       <>
-        <li className="lg:font-bold">
+        <li className="">
           <a href="#home">Home</a>
         </li>
-        <li className="lg:font-bold">
+        <li className="">
           <a href="#about">About</a>
         </li>
-        <li className="lg:font-bold">
+        <li className="">
           <a href="#skills">Skills</a>
         </li>
-        <li className="lg:font-bold">
+        <li className="">
           <a href="#projects">Projects</a>
         </li>
-        <li className="lg:font-bold">
+        <li className="">
           <a href="#contact">Contact</a>
         </li>
       </>
     );
   
     return (
-      <nav className="md:fixed md:flex-no-wrap md:px-16 md:top-0 md:right-0 md:left-0 md:z-10 md:flex navbar md:bg-black md:bg-opacity-10 text-[#0077B6] justify-between items-center">
+      <nav className={`md:fixed md:flex-no-wrap md:px-16 md:top-0 md:right-0 md:left-0 md:z-10 md:flex navbar md:text-white justify-between items-center ${isScrolled ? 'md:bg-[#0077B6] md:bg-opacity-80' : 'md:bg-black md:bg-opacity-10'}`}>
         <div className="navbar-start">
           <a className="btn btn-ghost md:text-xl" href="/"><img className="h-9 md:w-14" src="/sa-logo.png" alt="" /></a>
         </div>
@@ -31,8 +58,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-end flex items-center space-x-2">
           <div>
-          <p className="border border-[#0077B6] px-4 py-1 rounded-lg font-bold lg:text-xl  hover:bg-[#0077B6] hover:border-[#0077B6]">Resume</p>
+          <a href="/Sharear-Ahammed-Nihal_-CV.pdf"
+          download="Sharear-Ahammed-Nihal_-Resume.pdf">
+          <p className="hover:from-blue-950 hover:to-blue-800 border border-[#0077B6] px-4 py-1 rounded-lg font-bold lg:text-xl  hover:bg-[#0077B6] hover:cursor-pointer hover:text-white hover:border-[#0077B6]">Resume</p>
+          </a>
           </div>
+          <div><DarkMode></DarkMode></div>
           <div className="lg:hidden">
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">

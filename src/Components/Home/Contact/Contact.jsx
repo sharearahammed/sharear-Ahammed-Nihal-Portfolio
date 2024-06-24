@@ -34,12 +34,12 @@ const Contact = () => {
 
 
   return (
-    <div id="contact" className="bg-[#F3F4F6] p-5 mt-20 rounded-lg pb-20">
+    <div id="contact" className="dark:bg-slate-800  p-5 mt-20 rounded-lg pb-20">
       <div className="text-center mb-6 py-8">
         <h1 className="font-bold text-2xl">Contact Me</h1>
         <p>Any questions? Just email me!</p>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white dark:bg-slate-800">
         <div className="relative bg-[#0077B6] md:col-span-4 p-10 text-white rounded-lg">
           <p className="mt-4 text-xl leading-7 font-regular uppercase">
             Contact Information
@@ -64,7 +64,7 @@ const Contact = () => {
               </g>
             </svg>
             <span className="text-sm">
-            1701 BARI Rd., Gazipur
+            1701 BARI Rd., Gazipur, Dhaka
             </span>
           </div>
           <div className="flex items-center mt-5">

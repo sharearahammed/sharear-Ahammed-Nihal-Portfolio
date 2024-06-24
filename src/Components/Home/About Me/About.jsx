@@ -4,7 +4,7 @@ const About = () => {
     <div id="about" className="mt-10 md:mt-20 mb-20">
         <h1 className="mb-8 md:mb-10 lg:mb-0 text-center text-2xl md:text-5xl font-bold">More About Me</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center">
-        <div className="px-8">
+        <div className="px-5 md:px-0">
       <p className="mb-3 md:mb-5">Hi, I'm Sharear Ahammed Nihal</p>
       <p className="text-justify">
         I am a dedicated front-end web developer proficient in JavaScript,
@@ -17,7 +17,7 @@ const About = () => {
       </p>
         </div>
         <div>
-            <div>
+            <div className="px-5 md:px-0">
             <img className="md:p-20" src="/aboutMe.png" alt="" />
             </div>
         </div>

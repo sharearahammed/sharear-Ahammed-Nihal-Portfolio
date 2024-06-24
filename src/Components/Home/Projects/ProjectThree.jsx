@@ -47,7 +47,7 @@ const ProjectThree = () => {
         A responsive and user-friendly platform providing detailed information on tourist destinations across Southeast Asia, including Bangladesh, Thailand, Indonesia, Malaysia, and Vietnam. Features include emergency contact information, healthcare facilities, safety tips, and the ability to add and update tourist spots. Ensures a seamless user experience on all devices.
         </p>
       </div>
-      <div className="relative lg:px-10 pb-16 bg-white">
+      <div className="relative lg:px-10 pb-16">
         <ul className="text-gray-500 text-sm list-disc">
           <li>
           Intuitive Interface & Responsive Design
