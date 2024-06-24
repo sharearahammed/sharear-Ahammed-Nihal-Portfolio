@@ -40,7 +40,7 @@ const ProjectThree = () => {
     </Swiper>
       </div>
       <div className='mb-3'>
-      <h1 className="mt-3 mb-2 lg:mb-5 font-bold lg:text-2xl inline-block transition duration-500 ease-in-out">
+      <h1 data-aos="zoom-in-right" data-aos-duration="2000" className="mt-3 mb-2 lg:mb-5 font-bold lg:text-2xl inline-block transition duration-500 ease-in-out">
           3) Tourism Management 
         </h1>
         <p className='text-justify'>
@@ -60,20 +60,20 @@ const ProjectThree = () => {
         <div className="mt-5">
           <h1 className='font-bold'>Technology</h1>
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 mt-3 gap-2 text-[#0077B6]">
-            <p className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
+            <p data-aos="flip-down" data-aos-duration="4000" className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
               React JS
             </p>
-            <p className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
+            <p data-aos="flip-down" data-aos-duration="4000" className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
               MongoDB
             </p>
-            <p className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
+            <p data-aos="flip-down" data-aos-duration="4000" className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
               Firebase
             </p>
-            <p className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
+            <p data-aos="flip-down" data-aos-duration="4000" className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
               {" "}
               Tailwind CSS
             </p>
-            <p className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
+            <p data-aos="flip-down" data-aos-duration="4000" className="text-center border hover:cursor-pointer hover:bg-[#0077B6] hover:text-white rounded-lg border-[#0077B6] px-2 py-1 ">
               NodeJS
             </p>
           </div>

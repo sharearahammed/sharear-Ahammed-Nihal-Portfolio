@@ -7,7 +7,7 @@ const Projects = () => {
     <div id="projects">
       <div className="text-center mb-10">
         <h1 className="text-5xl font-bold mb-3">My Projects</h1>
-        <p>Take a look at my projects</p>
+        <p className="text-xl">Take a look at my projects</p>
       </div>
       <div className="">
         <ProjectOne />

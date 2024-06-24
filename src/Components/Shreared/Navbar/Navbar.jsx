@@ -1,28 +1,28 @@
 const Navbar = () => {
     const links = (
       <>
-        <li>
+        <li className="lg:font-bold">
           <a href="#home">Home</a>
         </li>
-        <li>
+        <li className="lg:font-bold">
           <a href="#about">About</a>
         </li>
-        <li>
+        <li className="lg:font-bold">
           <a href="#skills">Skills</a>
         </li>
-        <li>
+        <li className="lg:font-bold">
           <a href="#projects">Projects</a>
         </li>
-        <li>
+        <li className="lg:font-bold">
           <a href="#contact">Contact</a>
         </li>
       </>
     );
   
     return (
-      <nav className="navbar bg-base-100 flex justify-between items-center">
+      <nav className="md:fixed md:flex-no-wrap md:px-16 md:top-0 md:right-0 md:left-0 md:z-10 md:flex navbar md:bg-black md:bg-opacity-10 text-[#0077B6] justify-between items-center">
         <div className="navbar-start">
-          <a className="btn btn-ghost text-xl" href="#home">Portfolio</a>
+          <a className="btn btn-ghost md:text-xl" href="/"><img className="h-9 md:w-14" src="/sa-logo.png" alt="" /></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
@@ -31,7 +31,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end flex items-center space-x-2">
           <div>
-          <button className="btn btn-outline text-[#0077B6] hover:bg-[#0077B6] hover:border-[#0077B6]">Resume</button>
+          <p className="border border-[#0077B6] px-4 py-1 rounded-lg font-bold lg:text-xl  hover:bg-[#0077B6] hover:border-[#0077B6]">Resume</p>
           </div>
           <div className="lg:hidden">
             <div className="dropdown dropdown-end">

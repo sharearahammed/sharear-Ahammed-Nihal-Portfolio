@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 const About = () => {
   return (
-    <div id="about" className="mt-20 mb-20">
-        <h1 className="mb-10 lg:mb-0 text-center text-2xl font-bold">More About Me</h1>
+    <div id="about" className="mt-10 md:mt-20 mb-20">
+        <h1 className="mb-8 md:mb-10 lg:mb-0 text-center text-2xl md:text-5xl font-bold">More About Me</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center">
         <div className="px-8">
-      <p className="mb-5">Hi, I'm Sharear Ahammed Nihal</p>
+      <p className="mb-3 md:mb-5">Hi, I'm Sharear Ahammed Nihal</p>
       <p className="text-justify">
         I am a dedicated front-end web developer proficient in JavaScript,
         React.js, and Tailwind CSS, with expertise in Node.js, Express, MongoDB,

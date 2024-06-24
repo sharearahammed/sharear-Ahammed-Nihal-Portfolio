@@ -1,18 +1,46 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import axios from "axios";
+import toast from "react-hot-toast";
 import { FaFacebook } from "react-icons/fa";
 import { GrLinkedin } from "react-icons/gr";
 import { MdEmail, MdOutlineMailOutline } from "react-icons/md";
 
 const Contact = () => {
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const subject = form.subject.value;
+    const message = form.message.value;
+    const Contactinfo = {
+      email,subject,message
+    }
+    console.log('Contactinfo',Contactinfo)
+    try {
+      await axios.post('https://sharear-portfolio.vercel.app/contact',Contactinfo)
+      .then((res)=>{
+        console.log(res.data)
+        if (res.data.insertedId) {
+          console.log("-----------------------", res);
+          toast.success("Email send Successfully!");
+        }
+      })
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  }
+
+
   return (
-    <div className="bg-[#F3F4F6] p-5 mt-20 rounded-lg">
-      <div className="text-center mb-6">
+    <div id="contact" className="bg-[#F3F4F6] p-5 mt-20 rounded-lg pb-20">
+      <div className="text-center mb-6 py-8">
         <h1 className="font-bold text-2xl">Contact Me</h1>
         <p>Any questions? Just email me!</p>
       </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white">
-        <div className="bg-[#0077B6] md:col-span-4 p-10 text-white rounded-lg">
+        <div className="relative bg-[#0077B6] md:col-span-4 p-10 text-white rounded-lg">
           <p className="mt-4 text-xl leading-7 font-regular uppercase">
             Contact Information
           </p>
@@ -67,12 +95,20 @@ const Contact = () => {
           <p className="text-xl"><MdOutlineMailOutline /></p>
             <span className="text-sm">sharearahammed@gmail.com</span>
           </div>
-          <div className="flex gap-5 mt-[200px] text-3xl">
-            <p className="hover:border hover:shadow-lg hover:shadow-black hover:rounded-full p-3"><FaFacebook /></p>
-            <p className="hover:border hover:shadow-lg hover:shadow-black hover:rounded-full p-3"><GrLinkedin /></p>
+          <div className="flex lg:gap-5 gap-2 mt-[200px] text-xl md:text-2xl lg:text-3xl">
+            <a href="https://www.facebook.com/Sharear.Ahammed.10">
+            <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3"><FaFacebook /></p>
+            </a>
+            <a href="https://www.linkedin.com/in/sharear-ahammed-nihal">
+            <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3"><GrLinkedin /></p>
+            </a>
+            <div>
+              <img className="h-[170px] md:h-[120px] lg:h-[250px] absolute top-[325px] -right-3 md:top-[450px] md:-right-2 lg:top-[320px] lg:-right-0" src="/painting.png" alt="" />
+            </div>
           </div>
         </div>
         <div className="md:col-span-8 p-10">
+          <form onSubmit={handleSubmit}>
           <div className="rounded-lg">
             <div className="flex justify-center items-center gap-3">
               <p className="text-xl">
@@ -84,6 +120,7 @@ const Contact = () => {
             <input
               className="w-full  p-3 bg-white border border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
               type="email"
+              name="email"
               placeholder="Enter your email"
               required
             />
@@ -91,6 +128,7 @@ const Contact = () => {
             <input
               className="w-full p-3 bg-white border border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
               type="text"
+              name="subject"
               placeholder="Enter Subject"
               required
             />
@@ -98,6 +136,7 @@ const Contact = () => {
             <textarea
               className="w-full p-3 bg-white border border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
               rows="6"
+              name="message"
               placeholder="Enter Message"
               required
             ></textarea>
@@ -107,6 +146,7 @@ const Contact = () => {
               </button>
             </div>
           </div>
+          </form>
         </div>
       </div>
     </div>
