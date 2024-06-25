@@ -50,6 +50,7 @@ const ProjectOne = () => {
       </SwiperSlide>
     </Swiper>
       </div>
+      <div className='lg:max-w-3xl lg:mx-auto'>
       <div className='mb-3'>
       <h1 data-aos="zoom-in-right" data-aos-duration="2000" className="mt-3 mb-2 lg:mb-5 font-bold lg:text-2xl inline-block transition duration-500 ease-in-out">
           1) Micro Task and Earning Platform
@@ -58,7 +59,7 @@ const ProjectOne = () => {
         The Micro-Task and Earning Platform is a responsive, secure web application designed for crowdsourcing tasks, where users complete micro-tasks to earn rewards. It supports Workers, Task-Creators, and Admins, each with specific functionalities. Workers can view tasks, submit completions, and withdraw earnings, while Task-Creators manage tasks and payments. Admins oversee operations and handle financial transactions. The platform features secure authentication, real-time notifications, and Stripe integration for purchases, offering an intuitive and efficient user experience.
         </p>
       </div>
-      <div className="relative lg:px-10 pb-16 text-[17px]">
+      <div className="relative pb-16 text-[17px]">
         <ul className="text-gray-500 list-disc">
           <li>
             Proficient in secure user authentication, Multiple payment options,
@@ -106,6 +107,7 @@ const ProjectOne = () => {
             </a>
             </div>
         </div>
+      </div>
       </div>
     </div>
   );

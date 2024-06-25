@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { FaFacebook } from "react-icons/fa";
 import { GrLinkedin } from "react-icons/gr";
 import { MdEmail, MdOutlineMailOutline } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const handleSubmit = async (e)=>{
@@ -95,13 +96,38 @@ const Contact = () => {
           <p className="text-xl"><MdOutlineMailOutline /></p>
             <span className="text-sm">sharearahammed@gmail.com</span>
           </div>
-          <div className="flex lg:gap-5 gap-2 mt-[200px] text-xl md:text-2xl lg:text-3xl">
-            <a href="https://www.facebook.com/Sharear.Ahammed.10">
-            <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3"><FaFacebook /></p>
-            </a>
-            <a href="https://www.linkedin.com/in/sharear-ahammed-nihal">
-            <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3"><GrLinkedin /></p>
-            </a>
+          <div className="flex mt-[200px] text-xl md:text-2xl lg:text-3xl">
+
+            <motion.div
+              className="rounded-full mr-3 md:mr-5"
+              animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <a
+                href="https://www.facebook.com/Sharear.Ahammed.10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"
+              >
+                <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3"><FaFacebook /></p>
+              </a>
+            </motion.div>
+            
+            <motion.div
+              className="rounded-full mr-3 md:mr-5"
+              animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <a
+                href="https://www.linkedin.com/in/sharear-ahammed-nihal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"
+              >
+                <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3"><GrLinkedin /></p>
+              </a>
+            </motion.div>
+
             <div>
               <img className="h-[170px] md:h-[120px] lg:h-[250px] absolute top-[325px] -right-3 md:top-[450px] md:-right-2 lg:top-[320px] lg:-right-0" src="/painting.png" alt="" />
             </div>

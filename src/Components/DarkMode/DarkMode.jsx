@@ -29,7 +29,7 @@ const DarkMode = () => {
     return (
         <div className="text-xl flex justify-center items-center">
             <button className="rounded-lg dark:bg-slate-600 text-yellow-500 dark:text-white" onClick={handleThemeSwitch}>
-                <p className="border px-2 py-[8px] rounded-lg">{theme ==='dark' ? <HiMoon />: <PiSunBold />}</p>
+                <p className="border px-1 py-[6px] md:px-2 md:py-[8px] rounded-lg">{theme ==='dark' ? <HiMoon className="h-3 md:h-5" />: <PiSunBold className="h-3 md:h-5" />}</p>
             </button>
         </div>
     );

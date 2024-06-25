@@ -50,6 +50,7 @@ const ProjectTwo = () => {
       </SwiperSlide>
     </Swiper>
       </div>
+      <div className='lg:max-w-3xl lg:mx-auto'>
       <div className='mb-3'>
       <h1 data-aos="zoom-in-right" data-aos-duration="2000" className="mt-3 mb-2 lg:mb-5 font-bold lg:text-2xl inline-block transition duration-500 ease-in-out">
           2) Hotel Room Booking 
@@ -58,7 +59,7 @@ const ProjectTwo = () => {
         A responsive and user-friendly hotel booking platform. It features secure user authentication with JWT, seamless Stripe payment integration, and automated email notifications. Users can book, update, review, and cancel reservations with ease. Built with React JS, MongoDB, Firebase, Tailwind CSS, and NodeJS, it ensures a modern and efficient user experience.
         </p>
       </div>
-      <div className="relative lg:px-10 pb-16 text-[17px]">
+      <div className="relative pb-16 text-[17px]">
         <ul className="text-gray-500 list-disc">
           <li>
             Proficient in secure user authentication, Multiple payment options,
@@ -105,6 +106,7 @@ const ProjectTwo = () => {
             </a>
             </div>
         </div>
+      </div>
       </div>
     </div>
   );

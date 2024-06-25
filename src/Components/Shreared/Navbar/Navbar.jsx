@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DarkMode from "../../DarkMode/DarkMode";
-
+import { IoMdDownload } from "react-icons/io";
+import "./Navbar.css"
 
 const Navbar = () => {
 
@@ -28,28 +29,28 @@ const Navbar = () => {
 
     const links = (
       <>
-        <li className="font-bold text-[16px]">
+        <li className="font-bold text-[16px] ">
           <a href="#home">Home</a>
         </li>
-        <li className="font-bold text-[16px]">
+        <li className="font-bold text-[16px] ">
           <a href="#about">About</a>
         </li>
-        <li className="font-bold text-[16px]">
+        <li className="font-bold text-[16px] ">
           <a href="#skills">Skills</a>
         </li>
-        <li className="font-bold text-[16px]">
+        <li className="font-bold text-[16px] ">
           <a href="#projects">Projects</a>
         </li>
-        <li className="font-bold text-[16px]">
+        <li className="font-bold text-[16px] ">
           <a href="#contact">Contact</a>
         </li>
       </>
     );
   
     return (
-      <nav className={`md:fixed md:flex-no-wrap md:px-16 md:top-0 md:right-0 md:left-0 md:z-10 md:flex navbar md:text-white justify-between items-center ${isScrolled ? 'md:bg-[#0077B6] md:bg-opacity-80' : 'md:bg-black md:bg-opacity-10'}`}>
+      <nav className={`gruppo md:fixed md:flex-no-wrap md:px-16 md:top-0 md:right-0 md:left-0 md:z-10 md:flex navbar md:text-white justify-between items-center ${isScrolled ? 'md:bg-[#0077B6] md:bg-opacity-80' : 'md:bg-black md:bg-opacity-10'}`}>
         <div className="navbar-start">
-          <a className="btn btn-ghost md:text-xl" href="/"><img className="h-9 md:w-14" src="/sa-logo.png" alt="" /></a>
+          <a className="btn btn-ghost" href="/"><img className="h-5 md:h-9 md:w-14" src="/sa-logo.png" alt="" /></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
@@ -60,8 +61,9 @@ const Navbar = () => {
           <div>
           <a href="/Sharear-Ahammed-Nihal_-CV.pdf"
           download="Sharear-Ahammed-Nihal_-Resume.pdf">
-          <p className="hover:from-blue-950 hover:to-blue-800 border border-[#0077B6] px-4 py-1 rounded-lg font-bold lg:text-xl  hover:bg-[#0077B6] hover:cursor-pointer hover:text-white hover:border-[#0077B6]">Resume</p>
+          <p className="flex justify-center items-center gap-2 hover:from-blue-950 hover:to-blue-800 border-2 md:border-white border-[#0077B6] px-4 py-1 rounded-lg font-bold text-[10px] md:text-xl  hover:bg-[#0077B6] hover:cursor-pointer hover:text-white hover:border-[#0077B6]">Resume <IoMdDownload className="lg:text-[20px]" /></p>
           </a>
+          
           </div>
           <div><DarkMode></DarkMode></div>
           <div className="lg:hidden">
@@ -84,7 +86,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-[#0077B6]"
               >
                 {links}
               </ul>
