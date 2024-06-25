@@ -8,20 +8,20 @@ const Banner = () => {
     <div>
       <div
         id="home"
-        className="dark:bg-slate-800 flex justify-center items-center"
+        className="flex justify-center items-center"
       >
         <div className="relative flex justify-center items-center">
           <video autoPlay loop muted className="bg-cover">
             <source src="/banner.mp4" type="video/mp4" />
             max-w-7xl mx-auto
           </video>
-          <div className="bg-black bg-opacity-35 w-full h-full px-5 md:px-20 text-white absolute top-0 flex justify-between items-center lg:gap-[350px] pt-2 md:pt-6 lg:pt-12">
+          <div className="w-full h-full px-5 lg:px-0 text-white absolute top-0 grid grid-cols-2 items-center lg:gap-[350px] pt-2 md:pt-6 lg:pt-0 max-w-7xl mx-auto">
             <div>
-              <h1 className="text-[12px] pb-2 md:pb-10 lg:text-3xl md:text-2xl">
+              <h1 className="text-[12px] pb-2 md:pb-10 lg:text-4xl md:text-2xl">
                 Hi, I'm <br />
                 Sharear Ahammed Nihal
               </h1>
-              <div className="pb-2 md:pb-10 flex justify-center items-center gap-3">
+              <div className="pb-2 md:pb-10 flex justify-center lg:grid lg:grid-cols-8 items-center">
                 <a href="https://github.com/sharearahammed">
                   <p
                     className="animate__animated
@@ -30,7 +30,7 @@ const Banner = () => {
                     <ImGithub />
                   </p>
                 </a>
-                <h1 className="text-[12px] lg:text-4xl md:text-3xl">
+                <h1 className="text-[12px] lg:text-5xl md:text-2xl w-[700px] font-bold">
                   Front End Web Developer
                 </h1>
               </div>
@@ -47,10 +47,10 @@ const Banner = () => {
                 </a>
               </div>
             </div>
-            <div>
+            <div className="flex justify-end items-center w-[100%]">
               <div>
                 <img
-                  className="h-[140px] w-[130px] md:w-full lg:h-[450px] md:h-[300px] rounded-full border-[5px] md:border-[10px] border-[#0077B6]"
+                  className="h-[140px] w-[130px] md:w-full lg:h-[100%] md:h-[300px] rounded-full border-[5px] md:border-[10px] border-[#0077B6]"
                   src="/nihal.png"
                   alt=""
                 />

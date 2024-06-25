@@ -43,12 +43,12 @@ const ProjectThree = () => {
       <h1 data-aos="zoom-in-right" data-aos-duration="2000" className="mt-3 mb-2 lg:mb-5 font-bold lg:text-2xl inline-block transition duration-500 ease-in-out">
           3) Tourism Management 
         </h1>
-        <p className='text-justify'>
+        <p className='text-justify text-[18px]'>
         A responsive and user-friendly platform providing detailed information on tourist destinations across Southeast Asia, including Bangladesh, Thailand, Indonesia, Malaysia, and Vietnam. Features include emergency contact information, healthcare facilities, safety tips, and the ability to add and update tourist spots. Ensures a seamless user experience on all devices.
         </p>
       </div>
-      <div className="relative lg:px-10 pb-16">
-        <ul className="text-gray-500 text-sm list-disc">
+      <div className="relative lg:px-10 pb-16 text-[17px]">
+        <ul className="text-gray-500 list-disc">
           <li>
           Intuitive Interface & Responsive Design
           </li>
