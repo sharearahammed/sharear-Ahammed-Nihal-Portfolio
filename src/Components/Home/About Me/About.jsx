@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 const About = () => {
   return (
-    <div id="about" className="mt-10 md:mt-20 mb-20">
+    <div id="about" className="mt-5 md:mt-0 mb-20 md:px-5 lg:px-0">
         <h1 className="mb-8 md:mb-10 lg:mb-0 text-center text-2xl md:text-5xl font-bold">More About Me</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center">
         <div className="px-5 md:px-0">

@@ -1,0 +1,18 @@
+.waves {
+    position: relative;
+    transform: rotate(-180deg) scaleX(-1); /* Rotate and flip horizontally */
+}
+
+:root {
+    --shape-fill-color-light: #ffffff; /* Default (light mode) color */
+    --shape-fill-color-dark: #1E293B; /* Dark mode color */
+}
+
+.shape-fill {
+    fill: var(--shape-fill-color-light);
+    transition: fill 0.3s ease;
+}
+
+.dark .shape-fill {
+    fill: var(--shape-fill-color-dark);
+}
