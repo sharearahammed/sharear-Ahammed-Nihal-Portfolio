@@ -15,13 +15,13 @@ const Banner = () => {
             <source src="/banner.mp4" type="video/mp4" />
             max-w-7xl mx-auto
           </video>
-          <div className="w-full h-full px-5 lg:px-0 text-white absolute top-0 grid grid-cols-2 items-center lg:gap-[350px] pt-2 md:pt-6 lg:pt-0 max-w-7xl mx-auto">
+          <div className="w-full h-full px-5 lg:px-0 text-white absolute top-0 grid grid-cols-2 items-center lg:gap-[350px] pt-2 md:pt-6 lg:pt-0 md:max-w-7xl md:mx-auto">
             <div>
-              <h1 className="text-[12px] pb-2 md:pb-10 lg:text-4xl md:text-2xl">
+              <h1 className="text-[12px] pb-1 md:pb-10 md:text-2xl lg:text-4xl">
                 Hi, I'm <br />
                 Sharear Ahammed Nihal
               </h1>
-              <div className="pb-2 md:pb-10 flex justify-center lg:grid lg:grid-cols-8 items-center">
+              <div className="pb-1 md:pb-10 flex justify-center lg:grid lg:grid-cols-8 items-center">
                 
                   <p className="text-[15px] lg:text-5xl md:text-4xl">
                     <motion.div
@@ -40,18 +40,18 @@ const Banner = () => {
                     </motion.div>
                   </p>
                 
-                <h1 className="text-[12px] lg:text-5xl md:text-2xl w-[700px] font-bold">
+                <h1 className="text-[14px] lg:text-5xl md:text-2xl w-[700px] font-bold">
                   Front End Web Developer
                 </h1>
               </div>
               <div className="flex items-center md:gap-3 gap-2">
                 <a href="#projects">
-                  <button className="text-[8px] md:text-xl bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white px-2 py-1 md:px-4 md:py-3 rounded-md md:rounded-lg">
+                  <button className="text-[7px] md:text-xl bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white px-2 py-1 md:px-4 md:py-3 rounded-md md:rounded-lg">
                     View My Works
                   </button>
                 </a>
                 <a href="#contact">
-                  <button className="text-[8px] md:text-xl hover:bg-black text-white px-2 py-1 md:px-4 md:py-3 rounded-md  md:rounded-lg">
+                  <button className="text-[7px] md:text-xl hover:bg-black text-white px-2 py-1 md:px-4 md:py-3 rounded-md  md:rounded-lg">
                     Contact Me
                   </button>
                 </a>
