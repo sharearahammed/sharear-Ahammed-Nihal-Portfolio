@@ -59,8 +59,8 @@ const Navbar = () => {
         </div>
         <div className="navbar-end flex items-center space-x-2">
           <div>
-          <a href="/Sharear-Ahammed-Nihal_-CV.pdf"
-          download="Sharear-Ahammed-Nihal_-Resume.pdf">
+          <a href="/Resume of Sharear Ahammed Nihal.pdf"
+          download="Resume of Sharear Ahammed Nihal.pdf">
           <p className="flex justify-center items-center gap-2 hover:from-blue-950 hover:to-blue-800 border-2 md:border-white border-[#0077B6] px-4 py-1 rounded-lg font-bold text-[10px] md:text-xl  hover:bg-[#0077B6] hover:cursor-pointer hover:text-white hover:border-[#0077B6]">Resume <IoMdDownload className="lg:text-[20px]" /></p>
           </a>
           

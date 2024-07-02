@@ -144,7 +144,7 @@ const Contact = () => {
             </div>
             <p className="mt-5">Email</p>
             <input
-              className="w-full  p-3 bg-white border border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              className="w-full  p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -152,7 +152,7 @@ const Contact = () => {
             />
             <p className="mt-5">Subject</p>
             <input
-              className="w-full p-3 bg-white border border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              className="w-full p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
               type="text"
               name="subject"
               placeholder="Enter Subject"
@@ -160,7 +160,7 @@ const Contact = () => {
             />
             <p className="mt-5">Message</p>
             <textarea
-              className="w-full p-3 bg-white border border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              className="w-full p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
               rows="6"
               name="message"
               placeholder="Enter Message"
