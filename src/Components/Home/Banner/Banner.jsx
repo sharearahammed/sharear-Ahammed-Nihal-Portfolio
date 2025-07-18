@@ -2,11 +2,12 @@ import { ImGithub } from "react-icons/im";
 import "animate.css";
 import "./Banner.css";
 import { motion } from "framer-motion";
+import { useOutletContext } from "react-router-dom";
 
 /* eslint-disable react/no-unescaped-entities */
 const Banner = () => {
   return (
-    <div className="gruppo">
+    <div className="gruppo mt-16">
       <div id="home" className="flex justify-center items-center">
         <div className="relative flex justify-center items-center">
           <video autoPlay loop muted className="bg-cover">
@@ -48,7 +49,12 @@ const Banner = () => {
                   </button>
                 </a>
                 <a href="#contact">
-                  <button className="text-[7px] md:text-xl hover:bg-black text-white px-2 py-1 md:px-4 md:py-3 rounded-md  md:rounded-lg">
+                  <button
+                    onClick={() => {
+                      setActiveSection("contact");
+                    }}
+                    className="text-[7px] md:text-xl hover:bg-black text-white px-2 py-1 md:px-4 md:py-3 rounded-md  md:rounded-lg"
+                  >
                     Contact Me
                   </button>
                 </a>
@@ -66,7 +72,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="waves -top-[24px] md:-top-[79px] lg:-top-[199px]">
+      {/* <div className="waves -top-[24px] md:-top-[79px] lg:-top-[199px]">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +85,7 @@ const Banner = () => {
             className="shape-fill"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </div>
   );
 };

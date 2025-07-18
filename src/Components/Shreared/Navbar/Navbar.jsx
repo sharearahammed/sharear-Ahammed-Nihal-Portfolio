@@ -2,9 +2,14 @@ import { useEffect, useState } from "react";
 import DarkMode from "../../DarkMode/DarkMode";
 import { IoMdDownload } from "react-icons/io";
 import "./Navbar.css";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHome =
+    location.pathname === "/" &&
+    (location.hash === "" || location.hash === "#home");
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -18,6 +23,7 @@ const Navbar = () => {
       }
     }
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -27,30 +33,28 @@ const Navbar = () => {
 
   const links = (
     <>
-      <li className="font-bold text-[16px] ">
-        <a href="#home">Home</a>
+      <li className="font-bold text-[16px] cursor-pointer">
+        <a href="/">Home</a>
       </li>
-      <li className="font-bold text-[16px] ">
-        <a href="#about">About</a>
+      <li className="font-bold text-[16px] cursor-pointer">
+        <a href="/about">About</a>
       </li>
-      <li className="font-bold text-[16px] ">
-        <a href="#skills">Skills</a>
+      <li className="font-bold text-[16px] cursor-pointer">
+        <a href="/skills">Skills</a>
       </li>
-      <li className="font-bold text-[16px] ">
-        <a href="#projects">Projects</a>
+      <li className="font-bold text-[16px] cursor-pointer">
+        <a href="/projects">Projects</a>
       </li>
-      <li className="font-bold text-[16px] ">
-        <a href="#contact">Contact</a>
+      <li className="font-bold text-[16px] cursor-pointer">
+        <a href="/contact">Contact</a>
       </li>
     </>
   );
 
   return (
     <nav
-      className={`gruppo md:fixed md:flex-no-wrap md:px-16 md:top-0 md:right-0 md:left-0 md:z-10 md:flex navbar md:text-white justify-between items-center ${
-        isScrolled
-          ? "md:bg-[#0077B6] md:bg-opacity-80"
-          : "md:bg-black md:bg-opacity-10"
+      className={`gruppo fixed flex-no-wrap md:px-16 top-0 right-0 left-0 z-10 flex navbar text-white justify-between items-center ${
+        isHome ? "bg-[#0077B6] bg-opacity-80" : "bg-[#0077B6] bg-opacity-80"
       }`}
     >
       <div className="navbar-start">

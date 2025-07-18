@@ -2,27 +2,28 @@ import { GrInstagram } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gradient-to-r dark:from-gray-900 dark:via-black dark:to-gray-900 text-gray-700 dark:text-gray-300 p-10 md:px-20">
+    <footer className="bg-gray-100 dark:bg-gradient-to-r dark:from-gray-900 dark:via-black dark:to-gray-900 text-gray-800 dark:text-gray-300 py-10 px-4 sm:px-10 md:px-20 transition-colors duration-300 shadow-inner text-xs sm:text-sm md:text-base">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-0">
         {/* Logo & Copyright */}
         <aside className="flex flex-col items-center md:items-start space-y-4">
           <img
-            className="h-14 w-auto"
+            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
             src="/sa-logo.png"
             alt="Sharear Ahammed Nihal Logo"
           />
-          <p className="text-sm md:text-base max-w-xs text-center md:text-left leading-relaxed">
+
+          <p className="max-w-xs text-center md:text-left leading-relaxed sm:leading-normal text-[11px] sm:text-[13px] md:text-[15px]">
             &copy; {new Date().getFullYear()} Sharear Ahammed Nihal <br />
             All rights reserved.
           </p>
         </aside>
 
-        {/* Divider (only on desktop) */}
+        {/* Divider */}
         <div className="hidden md:block border-l border-gray-300 dark:border-gray-700 h-20"></div>
 
         {/* Social Links */}
         <nav className="flex flex-col items-center md:items-end space-y-4">
-          <h6 className="text-sm md:text-base text-[#0077B6] dark:text-[#00A3FF] font-semibold tracking-widest uppercase">
+          <h6 className="text-sm sm:text-base md:text-lg text-[#0077B6] dark:text-[#00A3FF] font-semibold tracking-widest uppercase">
             Connect with me
           </h6>
           <div className="flex space-x-6">
@@ -31,12 +32,12 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X / Twitter"
-              className="text-gray-600 dark:text-gray-400 hover:text-[#1DA1F2] dark:hover:text-[#1DA1F2] transition duration-300 transform hover:-translate-y-1 hover:scale-110"
+              className="text-gray-700 dark:text-gray-400 hover:text-[#1DA1F2] dark:hover:text-[#1DA1F2] transition duration-300 transform hover:-translate-y-1 hover:scale-110"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -44,19 +45,22 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/bitter_melon_010"
+              href="https://www.instagram.com/bitter_melon__10"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-gray-600 dark:text-gray-400 hover:text-[#E1306C] dark:hover:text-[#E1306C] transition duration-300 transform hover:-translate-y-1 hover:scale-110 text-2xl"
+              className="text-gray-700 dark:text-gray-400 hover:text-[#E1306C] dark:hover:text-[#E1306C] transition duration-300 transform hover:-translate-y-1 hover:scale-110 text-xl md:text-2xl"
             >
               <GrInstagram />
             </a>
           </div>
         </nav>
       </div>
-      <div className="mt-10 border-t border-gray-300 dark:border-gray-700 pt-6 text-center text-xs text-gray-500 dark:text-gray-400">
-        Designed & built by Sharear Ahammed Nihal — Powered by React & Tailwind CSS
+
+      {/* Bottom Text */}
+      <div className="mt-10 border-t border-gray-300 dark:border-gray-700 pt-6 text-center text-[11px] sm:text-sm text-gray-600 dark:text-gray-400">
+        Designed & built by Sharear Ahammed Nihal — Powered by React & Tailwind
+        CSS
       </div>
     </footer>
   );

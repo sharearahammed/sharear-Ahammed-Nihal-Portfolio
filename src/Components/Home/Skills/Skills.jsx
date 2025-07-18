@@ -1,13 +1,14 @@
-
-
-
 const SkillCard = ({ src, title, extra }) => (
   <div
     data-aos="flip-left"
     data-aos-duration="2000"
     className="hover:border-[#0077B6] duration-500 hover:scale-105 hover:shadow-xl flex flex-col border justify-center items-center lg:h-[200px] rounded-lg p-4 lg:p-0"
   >
-    <img className={`h-20 ${extra || ""}`} src={src} alt={title || "skill icon"} />
+    <img
+      className={`h-20 ${extra || ""}`}
+      src={src}
+      alt={title || "skill icon"}
+    />
     <p className="mt-4 text-[12px] md:text-[16px]">{title}</p>
   </div>
 );
@@ -70,9 +71,11 @@ const skillSections = [
 
 const Skills = () => {
   return (
-    <div id="skills" className="mb-20">
+    <div id="skills" className="pt-24 md:mt-0 md:pt-28 mb-20 md:px-5 lg:px-5">
       <div className="text-center mb-10 lg:mb-10">
-        <h1 className="text-xl md:text-5xl font-bold mb-3">My Skills</h1>
+        <h1 className="text-2xl md:text-5xl font-bold mb-4 text-[#0077B6] dark:text-blue-400">
+        My Skills
+        </h1>
         <p className="text-[14px] md:text-xl">
           Technologies I’ve been working with
         </p>
@@ -98,10 +101,9 @@ const Skills = () => {
           </div>
         </section>
       ))}
+
     </div>
   );
 };
 
 export default Skills;
-
-

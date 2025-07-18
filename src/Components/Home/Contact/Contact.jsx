@@ -8,44 +8,48 @@ import { MdEmail, MdOutlineMailOutline } from "react-icons/md";
 import { motion } from "framer-motion";
 
 const Contact = () => {
-  const handleSubmit = async (e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const subject = form.subject.value;
     const message = form.message.value;
     const Contactinfo = {
-      email,subject,message
-    }
-    console.log('Contactinfo',Contactinfo)
+      email,
+      subject,
+      message,
+    };
+    console.log("Contactinfo", Contactinfo);
     try {
-      await axios.post('https://sharear-portfolio.vercel.app/contact',Contactinfo)
-      .then((res)=>{
-        console.log(res.data)
-        if (res.data.insertedId) {
-          console.log("-----------------------", res);
-          toast.success("Email send Successfully!");
-        }
-      })
+      await axios
+        .post("https://sharear-portfolio.vercel.app/contact", Contactinfo)
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.insertedId) {
+            console.log("-----------------------", res);
+            toast.success("Email send Successfully!");
+          }
+        });
     } catch (error) {
       console.log(error);
       toast.error(error.message);
     }
-  }
-
+  };
 
   return (
-    <div id="contact" className="dark:bg-slate-800  p-5 mt-20 rounded-lg pb-20">
-      <div className="text-center mb-6 py-8">
-        <h1 className="font-bold text-xl md:text-5xl">Contact Me</h1>
+    <div id="contact" className="pt-24 md:mt-0 md:pt-28 mb-20 md:px-5 lg:px-5">
+      <div className="text-center mb-6 pb-8">
+        <h1 className="text-2xl md:text-5xl font-bold mb-4 text-[#0077B6] dark:text-blue-400">
+          Contact Me
+        </h1>
         <p className="text-[14px] md:text-xl">Any questions? Just email me!</p>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white dark:bg-slate-800">
-        <div className="relative bg-[#0077B6] md:col-span-4 p-10 text-white rounded-lg">
+      <div className="max-w-7xl grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white dark:bg-slate-800 mx-10 md:mx-auto">
+        <div className="relative bg-[#0077B6] md:col-span-4 py-10 px-5 md:p-10 md:p-10 text-white rounded-lg">
           <p className="mt-4 text-xl leading-7 font-regular uppercase">
             Contact Information
           </p>
-          
+
           <div className="flex items-center mt-5">
             <svg
               className="h-6 mr-2 text-white"
@@ -64,9 +68,7 @@ const Contact = () => {
                 </g>
               </g>
             </svg>
-            <span className="text-sm">
-            1701 BARI Rd., Gazipur, Dhaka
-            </span>
+            <span className="text-sm">1701 BARI Rd., Gazipur, Dhaka</span>
           </div>
           <div className="flex items-center mt-5">
             <svg
@@ -93,11 +95,12 @@ const Contact = () => {
             <span className="text-sm">+880 1876523323</span>
           </div>
           <div className="flex items-center gap-4 mt-5">
-          <p className="text-xl"><MdOutlineMailOutline /></p>
+            <p className="text-xl">
+              <MdOutlineMailOutline />
+            </p>
             <span className="text-sm">sharearahammed@gmail.com</span>
           </div>
           <div className="flex mt-[200px] text-xl md:text-2xl lg:text-3xl">
-
             <motion.div
               className="rounded-full mr-3 md:mr-5"
               animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
@@ -109,69 +112,79 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"
               >
-                <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3"><FaFacebook /></p>
+                <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3">
+                  <FaFacebook />
+                </p>
               </a>
             </motion.div>
-            
+
             <motion.div
               className="rounded-full mr-3 md:mr-5"
               animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
               <a
-                href="https://www.linkedin.com/in/sharear-ahammed-nihal"
+                href="https://www.linkedin.com/in/sharear-ahammed-nihal-27899b354"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"
               >
-                <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3"><GrLinkedin /></p>
+                <p className="duration-500 hover:scale-105 border hover:shadow-lg hover:shadow-black rounded-full p-3">
+                  <GrLinkedin />
+                </p>
               </a>
             </motion.div>
 
             <div>
-              <img className="h-[170px] md:h-[120px] lg:h-[250px] absolute top-[325px] -right-3 md:top-[450px] md:-right-2 lg:top-[320px] lg:-right-0" src="/painting.png" alt="" />
+              <img
+                className="h-[170px] md:h-[120px] lg:h-[250px] absolute top-[325px] -right-3 md:top-[450px] md:-right-2 lg:top-[320px] lg:-right-0"
+                src="/painting.png"
+                alt=""
+              />
             </div>
           </div>
         </div>
         <div className="md:col-span-8 p-10">
           <form onSubmit={handleSubmit}>
-          <div className="rounded-lg">
-            <div className="flex justify-center items-center gap-3">
-              <p className="text-xl">
-              <MdEmail />
-              </p>
-              <h1 className="text-[16px] md:text-xl font-bold">Send an Email</h1>
+            <div className="rounded-lg">
+              <div className="flex justify-center items-center gap-3">
+                <p className="text-xl">
+                  <MdEmail />
+                </p>
+                <h1 className="text-[16px] md:text-xl font-bold">
+                  Send an Email
+                </h1>
+              </div>
+              <p className="mt-5">Email</p>
+              <input
+                className="w-full  p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+              <p className="mt-5">Subject</p>
+              <input
+                className="w-full p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                type="text"
+                name="subject"
+                placeholder="Enter Subject"
+                required
+              />
+              <p className="mt-5">Message</p>
+              <textarea
+                className="w-full p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                rows="6"
+                name="message"
+                placeholder="Enter Message"
+                required
+              ></textarea>
+              <div className="mt-5 flex justify-end">
+                <button className="text-right px-8 py-3 text-lg font-semibold bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white rounded-lg">
+                  Send
+                </button>
+              </div>
             </div>
-            <p className="mt-5">Email</p>
-            <input
-              className="w-full  p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
-            <p className="mt-5">Subject</p>
-            <input
-              className="w-full p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
-              type="text"
-              name="subject"
-              placeholder="Enter Subject"
-              required
-            />
-            <p className="mt-5">Message</p>
-            <textarea
-              className="w-full p-3 bg-white border dark:text-black border-[#0077B6] rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
-              rows="6"
-              name="message"
-              placeholder="Enter Message"
-              required
-            ></textarea>
-            <div className="mt-5 flex justify-end">
-              <button className="text-right px-8 py-3 text-lg font-semibold bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white rounded-lg">
-                Send
-              </button>
-            </div>
-          </div>
           </form>
         </div>
       </div>

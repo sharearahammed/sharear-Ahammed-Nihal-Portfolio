@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 const About = () => {
   return (
-    <div id="about" className="mt-5 md:mt-0 mb-20 md:px-5 lg:px-5">
-      <h1 className="mb-8 md:mb-10 lg:mb-0 text-center text-xl md:text-5xl font-bold">
+    <div id="about" className="pt-24 md:mt-0 md:pt-28 mb-20 md:px-5 lg:px-5">
+      <h1 className="md:mb-10 lg:mb-0 text-center text-2xl md:text-5xl font-bold mb-4 text-[#0077B6] dark:text-blue-400">
         More About Me
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center">
