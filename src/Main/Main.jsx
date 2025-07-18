@@ -5,29 +5,35 @@ import { useEffect, useState } from "react";
 import { ImSpinner10 } from "react-icons/im";
 
 const Main = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        const timer = setTimeout(() => {
-          setIsLoading(false);
-        }, 3000); // 3000 ms = 3 seconds delay
-    
-        return () => clearTimeout(timer);
-      }, []);
-      
-      if (isLoading) {
-        return <div className="flex justify-center items-center min-h-screen "><ImSpinner10 loading={isLoading} className="animate-spin text-[100px] md:text-[200px] text-[#0077B6]" /></div>;
-      }
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // 3 seconds delay
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
     return (
-        <div className="dark:bg-slate-800 dark:text-white">
-            <div className="max-w-7xl mx-auto">
-            <Navbar />
-            </div>
-            <div>
-            <Outlet />
-            </div>
-            <Footer />
-        </div>
+      <div className="flex justify-center items-center min-h-screen bg-white dark:bg-slate-800 transition-colors duration-500">
+        <ImSpinner10 className="animate-spin text-[100px] md:text-[200px] text-[#0077B6]" />
+      </div>
     );
+  }
+
+  return (
+    <div className="bg-white dark:bg-slate-800 dark:text-white min-h-screen transition-colors duration-500">
+      <div className="max-w-7xl mx-auto px-4">
+        <Navbar />
+      </div>
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default Main;

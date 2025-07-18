@@ -3,10 +3,8 @@ import "animate.css";
 import "./Banner.css";
 import { motion } from "framer-motion";
 
-
 /* eslint-disable react/no-unescaped-entities */
 const Banner = () => {
-  
   return (
     <div className="gruppo">
       <div id="home" className="flex justify-center items-center">
@@ -22,24 +20,23 @@ const Banner = () => {
                 Sharear Ahammed Nihal
               </h1>
               <div className="pb-1 md:pb-10 flex justify-center lg:grid lg:grid-cols-8 items-center">
-                
-                  <p className="text-[15px] lg:text-5xl md:text-4xl">
-                    <motion.div
-                      className="rounded-full mr-3 md:mr-5"
-                      animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
+                <p className="text-[15px] lg:text-5xl md:text-4xl">
+                  <motion.div
+                    className="rounded-full mr-3 md:mr-5"
+                    animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <a
+                      href="https://github.com/sharearahammed"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"
                     >
-                      <a
-                        href="https://github.com/sharearahammed"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"
-                      >
-                        <ImGithub />
-                      </a>
-                    </motion.div>
-                  </p>
-                
+                      <ImGithub />
+                    </a>
+                  </motion.div>
+                </p>
+
                 <h1 className="text-[14px] lg:text-5xl md:text-2xl w-[700px] font-bold">
                   Front End Web Developer
                 </h1>
@@ -60,7 +57,7 @@ const Banner = () => {
             <div className="flex justify-end items-center w-[100%]">
               <div>
                 <img
-                  className="h-[140px] w-[130px] md:w-full lg:h-[100%] md:h-[300px] rounded-full border-[5px] md:border-[10px] border-[#0077B6]"
+                  className="h-[100px] w-[100px] md:w-full lg:h-[85%] md:h-[290px] rounded-full border-[5px] md:border-[10px] border-[#0077B6]"
                   src="/nihal.png"
                   alt=""
                 />
