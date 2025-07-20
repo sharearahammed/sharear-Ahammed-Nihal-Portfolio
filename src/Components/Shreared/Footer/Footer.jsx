@@ -2,7 +2,7 @@ import { GrInstagram } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-gradient-to-r dark:from-gray-900 dark:via-black dark:to-gray-900 text-gray-800 dark:text-gray-300 py-10 px-4 sm:px-10 md:px-20 transition-colors duration-300 shadow-inner text-xs sm:text-sm md:text-base">
+    <footer className="bg-gray-100 dark:bg-gradient-to-r dark:from-gray-900 dark:via-black dark:to-gray-900 text-gray-800 dark:text-gray-300 py-10 px-4 sm:px-10 transition-colors duration-300 shadow-inner text-xs sm:text-sm md:text-base">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-0">
         {/* Logo & Copyright */}
         <aside className="flex flex-col items-center md:items-start space-y-4">

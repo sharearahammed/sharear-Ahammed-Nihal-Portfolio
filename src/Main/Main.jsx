@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom"; // ✅ Import this
+import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Shreared/Navbar/Navbar";
 import Footer from "../Components/Shreared/Footer/Footer";
 import { useEffect, useState } from "react";
@@ -22,14 +22,13 @@ const Main = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-slate-800 dark:text-white min-h-[60vh] transition-colors duration-500">
-       <ScrollToTop />
+    <div className="bg-white dark:bg-slate-800 dark:text-white min-h-screen flex flex-col transition-colors duration-500">
+      <ScrollToTop />
       <div className="max-w-7xl mx-auto px-4">
         <Navbar />
       </div>
-      <main>
+      <main className="flex-grow">
         <Outlet />
-        {/* ⬆️ This will render Home or ProjectDetails based on route */}
       </main>
       <Footer />
     </div>

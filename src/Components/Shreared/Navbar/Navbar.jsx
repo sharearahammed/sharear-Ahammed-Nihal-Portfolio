@@ -5,6 +5,7 @@ import "./Navbar.css";
 import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const isHome =
@@ -53,7 +54,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`gruppo fixed flex-no-wrap md:px-16 top-0 right-0 left-0 z-10 flex navbar text-white justify-between items-center ${
+      className={`gruppo fixed flex-no-wrap md:px-16 top-0 right-0 left-0 z-100 flex navbar text-white justify-between z-50 items-center ${
         isHome ? "bg-[#0077B6] bg-opacity-80" : "bg-[#0077B6] bg-opacity-80"
       }`}
     >
@@ -81,33 +82,51 @@ const Navbar = () => {
           <DarkMode></DarkMode>
         </div>
         <div className="lg:hidden">
-          <div className="dropdown dropdown-end">
+          {/* Menu Button */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="btn btn-ghost btn-circle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </button>
+
+          {/* Backdrop */}
+          {isOpen && (
             <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+              className="fixed inset-0 bg-black bg-opacity-40 z-40"
+              onClick={() => setIsOpen(false)}
+            />
+          )}
+
+          {/* Side Drawer */}
+          <div
+            className={`fixed top-0 left-0 h-full w-64 bg-gray-100 dark:bg-gradient-to-r dark:from-gray-900 dark:via-black dark:to-gray-900 text-gray-800 dark:text-gray-300 shadow z-50 transform ${
+              isOpen ? "translate-x-0" : "-translate-x-full"
+            } transition-transform duration-300 ease-in-out`}
+          >
+            <div className="p-4 flex justify-between items-center border-b">
+              <h2 className="text-lg font-semibold text-[#0077B6]">Menu</h2>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-gray-600 hover:text-black"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h7"
-                />
-              </svg>
+                ✕
+              </button>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-[#0077B6]"
-            >
-              {links}
-            </ul>
+            <ul className="menu p-4 text-[#0077B6]">{links}</ul>
           </div>
         </div>
       </div>

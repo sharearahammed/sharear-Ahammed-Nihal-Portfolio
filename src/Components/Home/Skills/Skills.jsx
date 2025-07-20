@@ -1,28 +1,51 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const SkillCard = ({ src, title, extra }) => (
   <div
-    data-aos="flip-left"
-    data-aos-duration="2000"
-    className="hover:border-[#0077B6] duration-500 hover:scale-105 hover:shadow-xl flex flex-col border justify-center items-center lg:h-[200px] rounded-lg p-4 lg:p-0"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-once="true"
+    className="flex flex-col items-center p-6 rounded-lg bg-white dark:bg-gray-900
+      border border-gray-200 dark:border-gray-700 shadow-sm
+      hover:shadow-lg hover:shadow-[0_0_8px_rgba(0,119,182,0.5)] hover:scale-105
+      transition-transform duration-300 cursor-default"
   >
     <img
-      className={`h-20 ${extra || ""}`}
+      className={`h-20 w-20 object-contain ${extra || ""} hover:animate-bounce-small`}
       src={src}
       alt={title || "skill icon"}
+      title={title}
+      loading="lazy"
     />
-    <p className="mt-4 text-[12px] md:text-[16px]">{title}</p>
+    <p className="mt-4 text-lg font-medium text-gray-800 dark:text-gray-100 select-none">
+      {title}
+    </p>
   </div>
 );
 
 const WideCard = ({ src, title }) => (
   <div
-    data-aos="flip-left"
-    data-aos-duration="2000"
-    className="hover:border-[#0077B6] duration-500 hover:scale-105 hover:shadow-xl 
-      flex flex-col justify-center items-center border lg:h-[200px] 
-      rounded-lg p-4 lg:p-0 col-span-2 lg:col-span-1 w-full"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-once="true"
+    className="flex flex-col items-center p-6 rounded-lg bg-white dark:bg-gray-900
+      border border-gray-200 dark:border-gray-700 shadow-sm
+      hover:shadow-lg hover:shadow-[0_0_8px_rgba(0,119,182,0.5)] hover:scale-105
+      transition-transform duration-300 cursor-default
+      col-span-2 lg:col-span-1 w-full"
   >
-    <img className="h-20" src={src} alt={title || "skill icon"} />
-    <p className="mt-4 text-[12px] md:text-[16px]">{title}</p>
+    <img
+      className="h-20 w-20 object-contain hover:animate-bounce-small"
+      src={src}
+      alt={title || "skill icon"}
+      title={title}
+      loading="lazy"
+    />
+    <p className="mt-4 text-lg font-medium text-gray-800 dark:text-gray-100 select-none">
+      {title}
+    </p>
   </div>
 );
 
@@ -70,38 +93,50 @@ const skillSections = [
 ];
 
 const Skills = () => {
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
+
   return (
-    <div id="skills" className="pt-24 md:mt-0 md:pt-28 mb-20 md:px-5 lg:px-5">
-      <div className="text-center mb-10 lg:mb-10">
-        <h1 className="text-2xl md:text-5xl font-bold mb-4 text-[#0077B6] dark:text-blue-400">
-        My Skills
+    <div id="skills" className="pt-24 md:pt-28 mb-20 px-5 max-w-6xl mx-auto">
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#0077B6] tracking-tight mb-2 select-none">
+          My Skills
         </h1>
-        <p className="text-[14px] md:text-xl">
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto select-none">
           Technologies I’ve been working with
         </p>
       </div>
 
       {skillSections.map((section, i) => (
-        <section key={i} className="md:mt-10 text-center p-5 lg:p-0 lg:mx-5">
-          <p className="mb-10 text-xl font-bold underline">{section.title}</p>
-          <div
-            className={`grid ${section.grid} justify-center items-center gap-10`}
+        <section key={i} className="mb-16 relative rounded-lg p-0">
+          <h2
+            className="relative text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-8
+            border-b-2 border-[#0077B6] inline-block pb-1 tracking-wide select-none"
           >
-            {section.skills.map((skill, index) => (
-              <SkillCard
-                key={index}
-                src={skill.src}
-                title={skill.title}
-                extra={skill.extra}
-              />
+            {section.title}
+          </h2>
+
+          <div
+            className={`${section.grid} relative grid gap-8`}
+          >
+            {section.skills.map(({ src, title, extra }, idx) => (
+              <SkillCard key={idx} src={src} title={title} extra={extra} />
             ))}
-            {section.wide && (
-              <WideCard src={section.wide.src} title={section.wide.title} />
-            )}
+            {section.wide && <WideCard src={section.wide.src} title={section.wide.title} />}
           </div>
         </section>
       ))}
 
+      <style>{`
+        @keyframes bounce-small {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+        }
+        .hover\\:animate-bounce-small:hover {
+          animation: bounce-small 0.5s ease-in-out;
+        }
+      `}</style>
     </div>
   );
 };

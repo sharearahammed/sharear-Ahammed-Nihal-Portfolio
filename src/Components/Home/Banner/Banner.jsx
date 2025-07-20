@@ -2,26 +2,44 @@ import { ImGithub } from "react-icons/im";
 import "animate.css";
 import "./Banner.css";
 import { motion } from "framer-motion";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
+import useIsMediumUp from "../../useScreen";
 
 /* eslint-disable react/no-unescaped-entities */
 const Banner = () => {
+  const navigate = useNavigate();
+  const isMediumUp = useIsMediumUp();
   return (
     <div className="gruppo mt-16">
       <div id="home" className="flex justify-center items-center">
         <div className="relative flex justify-center items-center">
-          <video autoPlay loop muted className="bg-cover">
-            <source src="/banner.mp4" type="video/mp4" />
-            max-w-7xl mx-auto
-          </video>
-          <div className="w-full h-full px-5 lg:px-0 text-white absolute top-0 grid grid-cols-2 items-center lg:gap-[350px] pt-2 md:pt-6 lg:pt-0 md:max-w-7xl md:mx-auto">
+          {!isMediumUp ? (
+            <video
+              autoPlay
+              loop
+              muted
+              className="w-full h-[500px] object-cover"
+            >
+              <source src="/banner.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <video
+              autoPlay
+              loop
+              muted
+              className="bg-cove"
+            >
+              <source src="/banner.mp4" type="video/mp4" />
+            </video>
+          )}
+          <div className="w-full h-full px-4 sm:px-10 xl:px-0 lg:px-16 text-white absolute top-0 grid grid-cols-2 items-center lg:gap-[350px] pt-2 md:pt-6 lg:pt-0 lg:max-w-7xl lg:mx-auto">
             <div>
-              <h1 className="text-[12px] pb-1 md:pb-10 md:text-2xl lg:text-4xl">
+              <h1 className="text-[12px] sm:text-[14px] pb-1 md:pb-10 md:text-2xl lg:text-3xl">
                 Hi, I'm <br />
                 Sharear Ahammed Nihal
               </h1>
               <div className="pb-1 md:pb-10 flex justify-center lg:grid lg:grid-cols-8 items-center">
-                <p className="text-[15px] lg:text-5xl md:text-4xl">
+                <p className="text-[16px] sm:text-[18px] lg:text-4xl md:text-3xl">
                   <motion.div
                     className="rounded-full mr-3 md:mr-5"
                     animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
@@ -38,22 +56,22 @@ const Banner = () => {
                   </motion.div>
                 </p>
 
-                <h1 className="text-[14px] lg:text-5xl md:text-2xl w-[700px] font-bold">
+                <h1 className="text-[14px] sm:text-[16px] lg:text-4xl md:text-2xl w-[700px] font-bold">
                   Front End Web Developer
                 </h1>
               </div>
               <div className="flex items-center md:gap-3 gap-2">
-                <a href="#projects">
-                  <button className="text-[7px] md:text-xl bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white px-2 py-1 md:px-4 md:py-3 rounded-md md:rounded-lg">
+                <a href="/projects">
+                  <button className="text-[8px] sm:text-[10px] md:text-[16px] bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white px-2 py-1 md:px-4 md:py-3 rounded-md md:rounded-lg">
                     View My Works
                   </button>
                 </a>
                 <a href="#contact">
                   <button
                     onClick={() => {
-                      setActiveSection("contact");
+                      navigate("/contact");
                     }}
-                    className="text-[7px] md:text-xl hover:bg-black text-white px-2 py-1 md:px-4 md:py-3 rounded-md  md:rounded-lg"
+                    className="text-[8px] sm:text-[10px] md:text-[16px] hover:bg-black text-white px-2 py-1 md:px-4 md:py-3 rounded-md  md:rounded-lg"
                   >
                     Contact Me
                   </button>
@@ -63,7 +81,7 @@ const Banner = () => {
             <div className="flex justify-end items-center w-[100%]">
               <div>
                 <img
-                  className="h-[100px] w-[100px] md:w-full lg:h-[85%] md:h-[290px] rounded-full border-[5px] md:border-[10px] border-[#0077B6]"
+                  className="h-[150px] w-[150px] md:w-full xl:h-[85%] md:h-[290px] rounded-full border-[5px] md:border-[10px] border-[#0077B6]"
                   src="/nihal.png"
                   alt=""
                 />

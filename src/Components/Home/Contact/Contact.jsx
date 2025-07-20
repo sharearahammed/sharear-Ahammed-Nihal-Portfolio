@@ -44,9 +44,9 @@ const Contact = () => {
         </h1>
         <p className="text-[14px] md:text-xl">Any questions? Just email me!</p>
       </div>
-      <div className="max-w-7xl grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white dark:bg-slate-800 mx-10 md:mx-auto">
+      <div className="max-w-7xl grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white dark:bg-slate-800 mx-5 sm:mx-5 sm:mx-10 md:mx-auto">
         <div className="relative bg-[#0077B6] md:col-span-4 py-10 px-5 md:p-10 md:p-10 text-white rounded-lg">
-          <p className="mt-4 text-xl leading-7 font-regular uppercase">
+          <p className="mt-4 text-[14px] md:text-xl sm:text-[16px] leading-7 font-regular uppercase">
             Contact Information
           </p>
 
@@ -68,7 +68,9 @@ const Contact = () => {
                 </g>
               </g>
             </svg>
-            <span className="text-sm">1701 BARI Rd., Gazipur, Dhaka</span>
+            <span className="text-[12px] sm:text-sm">
+              1701 BARI Rd., Gazipur, Dhaka
+            </span>
           </div>
           <div className="flex items-center mt-5">
             <svg
@@ -92,15 +94,15 @@ const Contact = () => {
                 <path d="M44.076,37.889c-1.276-0.728-2.597-0.958-3.721-0.646c-0.844,0.234-1.532,0.768-1.996,1.546 c-1.02,1.22-2.286,2.646-2.592,2.867c-2.367,1.604-4.25,1.415-6.294-0.629L17.987,29.542c-2.045-2.045-2.233-3.928-0.629-6.294 c0.221-0.306,1.647-1.572,2.867-2.592c0.778-0.465,1.312-1.152,1.546-1.996c0.313-1.125,0.082-2.446-0.646-3.721l-5.421-9.504 c-1.018-1.783-2.923-2.819-4.886-2.645L6.288,2.44c-1.129,0.105-2.153,0.631-2.878,1.462c-1.504,1.669-3.421,4.514-2.248,8.614 c1.883,6.82,6.693,13.394,14.515,21.215c7.822,7.822,14.396,12.633,21.215,14.515c4.101,1.135,6.946-0.744,8.614-2.248 c0.831-0.725,1.357-1.749,1.462-2.878l0.078-0.762c0.174-1.963-0.862-3.868-2.645-4.886L44.076,37.889z M46.469,49.998 c-0.042,0.414-0.252,0.982-0.764,1.474c-1.249,1.171-3.226,2.315-6.827,1.169c-6.658-1.842-12.935-6.484-20.426-13.975 c-7.492-7.492-12.134-13.769-13.975-20.426c-1.146-4.27,0.479-6.117,1.169-6.827c0.492-0.512,1.06-0.722,1.474-0.764l0.754-0.078 c1.197-0.125,2.372,0.646,2.926,1.618l5.421,9.504c0.451,0.792,0.585,1.648,0.385,2.409c-0.149,0.536-0.489,0.994-1.122,1.404 c-1.351,0.907-2.947,2.296-3.344,2.873c-2.517,3.486-1.993,6.99,1.646,10.628l11.045,11.045c2.91,2.91,5.626,4.381,8.083,4.381 c1.865,0,3.594-0.678,4.901-2.026c0.576-0.576,1.966-1.993,2.873-3.344c0.41-0.632,0.869-0.972,1.404-1.122 c0.761-0.2,1.617-0.065,2.409,0.385l9.504,5.421C46.071,47.626,46.194,48.801,46.469,49.998z" />
               </g>
             </svg>
-            <span className="text-sm">+880 1876523323</span>
+            <span className="text-[12px] sm:text-sm">+880 1876523323</span>
           </div>
           <div className="flex items-center gap-4 mt-5">
-            <p className="text-xl">
+            <p className="text-[18px] sm:text-xl">
               <MdOutlineMailOutline />
             </p>
-            <span className="text-sm">sharearahammed@gmail.com</span>
+            <span className="text-[12px] sm:text-sm">sharearahammed@gmail.com</span>
           </div>
-          <div className="flex mt-[200px] text-xl md:text-2xl lg:text-3xl">
+          <div className="flex mt-[200px] text-[10px] sm:text-xl md:text-2xl lg:text-3xl">
             <motion.div
               className="rounded-full mr-3 md:mr-5"
               animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
@@ -144,7 +146,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="md:col-span-8 p-10">
+        <div className="md:col-span-8 px-5 pt-10 sm:pt-10 pb-5  sm:p-10">
           <form onSubmit={handleSubmit}>
             <div className="rounded-lg">
               <div className="flex justify-center items-center gap-3">
@@ -179,8 +181,8 @@ const Contact = () => {
                 placeholder="Enter Message"
                 required
               ></textarea>
-              <div className="mt-5 flex justify-end">
-                <button className="text-right px-8 py-3 text-lg font-semibold bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white rounded-lg">
+              <div className="mt-5 sm:flex sm:justify-end">
+                <button className="w-full sm:w-[25%] md:w-[150px] px-8 py-3 text-lg font-semibold bg-gradient-to-r from-[#0077B6] to-blue-500 hover:from-blue-950 hover:to-blue-800 text-white rounded-lg">
                   Send
                 </button>
               </div>
