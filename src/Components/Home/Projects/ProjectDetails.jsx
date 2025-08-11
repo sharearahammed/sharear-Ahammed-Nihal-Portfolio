@@ -4,6 +4,7 @@ import ProjectTwo from "./ProjectTwo";
 import ProjectThree from "./ProjectThree";
 import ProjectFour from "./ProjectFour";
 import Navbar from "../../Shreared/Navbar/Navbar";
+import ProjectFive from "./ProjectFive";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -17,6 +18,8 @@ const ProjectDetails = () => {
         return <ProjectTwo />;
       case "4":
         return <ProjectThree />;
+      case "5":
+        return <ProjectFive />;
 
       default:
         return <p className="text-center text-red-500">Project not found.</p>;

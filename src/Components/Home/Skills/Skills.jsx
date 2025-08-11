@@ -13,7 +13,9 @@ const SkillCard = ({ src, title, extra }) => (
       transition-transform duration-300 cursor-default"
   >
     <img
-      className={`h-20 w-20 object-contain ${extra || ""} hover:animate-bounce-small`}
+      className={`h-20 w-20 object-contain ${
+        extra || ""
+      } hover:animate-bounce-small`}
       src={src}
       alt={title || "skill icon"}
       title={title}
@@ -55,19 +57,21 @@ const skillSections = [
     grid: "grid-cols-2 lg:grid-cols-4",
     skills: [
       { src: "/react.svg", title: "React" },
+      { src: "/nextjs.png", title: "Nextjs" },
       { src: "/tailwind.png", title: "Tailwind" },
       { src: "/redux.svg", title: "Redux" },
       { src: "/mui.png", title: "Material UI" },
+      { src: "/mongodb.svg", title: "MongoDB" }
     ],
-    wide: { src: "/mongodb.svg", title: "MongoDB" },
+    // wide: { src: "/mongodb.svg", title: "MongoDB" },
   },
   {
     title: "Comfortable",
     grid: "grid-cols-2 lg:grid-cols-4",
     skills: [
       { src: "/js.png", title: "JavaScript" },
-      { src: "/express.png", title: "Express" },
       { src: "/typescript-def.png", title: "TypeScript" },
+      { src: "/express.png", title: "Express" },
       { src: "/Postgresql_elephant.png", title: "PostgreSQL" },
     ],
   },
@@ -117,13 +121,13 @@ const Skills = () => {
             {section.title}
           </h2>
 
-          <div
-            className={`${section.grid} relative grid gap-8`}
-          >
+          <div className={`${section.grid} relative grid gap-8`}>
             {section.skills.map(({ src, title, extra }, idx) => (
               <SkillCard key={idx} src={src} title={title} extra={extra} />
             ))}
-            {section.wide && <WideCard src={section.wide.src} title={section.wide.title} />}
+            {section.wide && (
+              <WideCard src={section.wide.src} title={section.wide.title} />
+            )}
           </div>
         </section>
       ))}

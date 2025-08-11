@@ -40,6 +40,13 @@ const Projects = () => {
       description: "Tourist info & destination guide for Asia.",
       stack: ["React JS", "Firebase", "MongoDB", "Tailwind CSS", "NodeJS"],
     },
+    {
+      id: 5,
+      title: "Flight Search Box Clone",
+      img: "/Project4Collage1.jpg",
+      description: "Flight search box clone built with React, Tailwind CSS, and TypeScript.",
+      stack: ["React JS", "Tailwind CSS", "TypeScript"],
+    },
   ];
 
   return (
@@ -52,7 +59,8 @@ const Projects = () => {
           My Projects
         </h1>
         <p className="text-[14px] md:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
-          A curated list of real-world applications built using modern full-stack technologies.
+          A curated list of real-world applications built using modern
+          full-stack technologies.
         </p>
       </div>
 
