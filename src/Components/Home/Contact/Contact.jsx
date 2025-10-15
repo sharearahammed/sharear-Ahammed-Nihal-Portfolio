@@ -2,10 +2,34 @@
 
 import axios from "axios";
 import toast from "react-hot-toast";
-import { FaFacebook } from "react-icons/fa";
 import { GrLinkedin } from "react-icons/gr";
 import { MdEmail, MdOutlineMailOutline } from "react-icons/md";
 import { motion } from "framer-motion";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaFacebook } from "react-icons/fa";
+
+
+const contactDetails = [
+  {
+    icon: FaMapMarkerAlt,
+    label: "Location",
+    value: "1701 BARI Rd., Gazipur, Dhaka",
+    color: "from-red-500 to-pink-500",
+  },
+  {
+    icon: FaPhone,
+    label: "Phone",
+    value: "+880 1876523323",
+    link: "tel:+8801876523323",
+    color: "from-green-500 to-teal-500",
+  },
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    value: "sharearahammed@gmail.com",
+    link: "mailto:sharearahammed@gmail.com",
+    color: "from-blue-500 to-cyan-500",
+  },
+];
 
 const Contact = () => {
   const handleSubmit = async (e) => {
@@ -60,6 +84,55 @@ const Contact = () => {
           <div className="h-1 w-16 bg-gradient-to-l from-transparent to-blue-500 rounded-full" />
         </div>
       </div>
+
+           {/* Main Contact Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
+          {/* Contact Cards */}
+          {contactDetails.map((detail, index) => {
+            const Icon = detail.icon;
+            return (
+              <motion.div
+                key={index}
+                data-aos="zoom-in"
+                data-aos-delay={index * 150}
+                whileHover={{ y: -5 }}
+                className="group relative"
+              >
+                {/* Glow Background */}
+                <div className={`absolute -inset-4 bg-gradient-to-r ${detail.color} rounded-3xl blur-3xl opacity-20 group-hover:opacity-40 transition-all duration-500`} />
+
+                {/* Card */}
+                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-2xl border-2 border-gray-200 dark:border-gray-800 p-8 text-center hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-500 h-full">
+                  {/* Icon */}
+                  <div className={`w-16 h-16 bg-gradient-to-br ${detail.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="text-white text-2xl" />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                    {detail.label}
+                  </h3>
+
+                  {detail.link ? (
+                    <a
+                      href={detail.link}
+                      className="text-lg text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-semibold break-all"
+                    >
+                      {detail.value}
+                    </a>
+                  ) : (
+                    <p className="text-lg text-gray-600 dark:text-gray-400 font-semibold">
+                      {detail.value}
+                    </p>
+                  )}
+
+                  {/* Bottom accent */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${detail.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl`} />
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white dark:bg-slate-800">
         <div className="relative bg-[#0077B6] md:col-span-4 py-10 px-5 md:p-10 text-white rounded-lg">
@@ -209,6 +282,23 @@ const Contact = () => {
           </form>
         </div>
       </div>
+        {/* Custom Animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+        .animate-float {
+          animation: float linear infinite;
+        }
+        .delay-500 {
+          animation-delay: 500ms;
+        }
+        .delay-1000 {
+          animation-delay: 1000ms;
+        }
+      `}</style>
     </div>
   );
 };

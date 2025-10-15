@@ -1,67 +1,209 @@
-import { GrInstagram } from "react-icons/gr";
+import { useEffect } from "react";
+import { FaTwitter, FaInstagram, FaLinkedin, FaGithub, FaArrowUp } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const socialLinks = [
+    {
+      icon: FaTwitter,
+      label: "Twitter",
+      url: "https://x.com/NihalSharear",
+      color: "hover:text-blue-400",
+    },
+    {
+      icon: FaInstagram,
+      label: "Instagram",
+      url: "https://www.instagram.com/bitter_melon__10",
+      color: "hover:text-pink-500",
+    },
+    {
+      icon: FaLinkedin,
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/sharear-ahammed-nihal-27899b354",
+      color: "hover:text-cyan-400",
+    },
+    {
+      icon: FaGithub,
+      label: "GitHub",
+      url: "https://github.com/sharearahammed",
+      color: "hover:text-gray-300",
+    },
+  ];
+
+  const footerLinks = [
+    { label: "Home", href: "#" },
+    { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
+    { label: "Skills", href: "#skills" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
-    <footer className="bg-gray-100 dark:bg-gradient-to-r dark:from-gray-900 dark:via-black dark:to-gray-900 text-gray-800 dark:text-gray-300 py-10 px-4 sm:px-10 transition-colors duration-300 text-xs sm:text-sm md:text-base">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-0">
-        {/* Logo & Copyright */}
-        <aside className="flex flex-col items-center md:items-start space-y-4">
-          <img
-            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
-            src="/sa-logo.png"
-            alt="Sharear Ahammed Nihal Logo"
+    <footer className="relative bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-black dark:to-gray-900 text-gray-800 dark:text-gray-300 overflow-hidden transition-colors duration-300">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 -left-40 w-80 h-80 bg-blue-200/20 dark:bg-blue-900/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 -right-40 w-80 h-80 bg-cyan-200/20 dark:bg-cyan-900/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-0.5 h-0.5 bg-blue-400/40 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${8 + Math.random() * 10}s`,
+            }}
           />
+        ))}
+      </div>
 
-          <p className="max-w-xs text-center md:text-left leading-relaxed sm:leading-normal text-[11px] sm:text-[13px] md:text-[15px]">
-            &copy; {new Date().getFullYear()} Sharear Ahammed Nihal <br />
-            All rights reserved.
-          </p>
-        </aside>
+      <div className="relative">
+        {/* Main Footer Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            {/* Brand Section */}
+            <div className="space-y-4" data-aos="fade-up">
+              <div className="group">
+                <img
+                  className="h-12 md:h-16 w-auto transition-transform duration-300 group-hover:scale-110"
+                  src="/sa-logo.png"
+                  alt="Sharear Ahammed Nihal Logo"
+                />
+              </div>
+              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                Full-stack developer crafting beautiful, responsive web experiences with modern technologies.
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 font-semibold">
+                © {new Date().getFullYear()} Sharear Ahammed Nihal
+              </p>
+            </div>
 
-        {/* Divider */}
-        <div className="hidden md:block border-l border-gray-300 dark:border-gray-700 h-20"></div>
+            {/* Quick Links */}
+            <div data-aos="fade-up" data-aos-delay="100">
+              <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                <span className="w-1 h-6 bg-gradient-to-b from-blue-600 to-cyan-600 rounded-full"></span>
+                Quick Links
+              </h4>
+              <ul className="space-y-3">
+                {footerLinks.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center gap-2 group"
+                    >
+                      <span className="w-0 h-px bg-blue-600 dark:bg-blue-400 group-hover:w-2 transition-all duration-300"></span>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        {/* Social Links */}
-        <nav className="flex flex-col items-center md:items-end space-y-4">
-          <h6 className="text-sm sm:text-base md:text-lg text-[#0077B6] dark:text-[#00A3FF] font-semibold tracking-widest uppercase">
-            Connect with me
-          </h6>
-          <div className="flex space-x-6">
-            <a
-              href="https://x.com/NihalSharear"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X / Twitter"
-              className="text-gray-700 dark:text-gray-400 hover:text-[#1DA1F2] dark:hover:text-[#1DA1F2] transition duration-300 transform hover:-translate-y-1 hover:scale-110"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-              </svg>
-            </a>
-            <a
-              href="https://www.instagram.com/bitter_melon__10"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-gray-700 dark:text-gray-400 hover:text-[#E1306C] dark:hover:text-[#E1306C] transition duration-300 transform hover:-translate-y-1 hover:scale-110 text-xl md:text-2xl"
-            >
-              <GrInstagram />
-            </a>
+            {/* Technologies */}
+            <div data-aos="fade-up" data-aos-delay="200">
+              <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                <span className="w-1 h-6 bg-gradient-to-b from-cyan-600 to-teal-600 rounded-full"></span>
+                Technologies
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {["React", "Next.js", "Node.js", "MongoDB", "Tailwind", "TypeScript"].map(
+                  (tech, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 text-xs font-semibold rounded-full bg-gray-200 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-600/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 border border-gray-300 dark:border-gray-700 dark:hover:border-blue-600 cursor-default"
+                    >
+                      {tech}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Connect Section */}
+            <div data-aos="fade-up" data-aos-delay="300">
+              <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                <span className="w-1 h-6 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"></span>
+                Connect
+              </h4>
+              <div className="space-y-3">
+                <p className="text-sm text-gray-600 dark:text-gray-400">Follow me on social media or get in touch directly.</p>
+                <div className="flex gap-4">
+                  {socialLinks.map((social, index) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={index}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                        className={`w-10 h-10 rounded-lg bg-gray-200 dark:bg-gray-800/50 flex items-center justify-center text-gray-600 dark:text-gray-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20 border border-gray-300 dark:border-gray-700 ${social.color}`}
+                      >
+                        <Icon className="text-lg" />
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           </div>
-        </nav>
+
+          {/* Divider */}
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent mb-12"></div>
+
+          {/* Bottom Section */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left text-sm text-gray-600 dark:text-gray-500">
+              <p>
+                Designed & built with <span className="text-red-500">❤️</span> by Sharear Ahammed Nihal
+              </p>
+              <p className="mt-2">
+                Powered by <span className="text-blue-600 dark:text-blue-400 font-semibold">React</span> & <span className="text-cyan-600 dark:text-cyan-400 font-semibold">Tailwind CSS</span>
+              </p>
+            </div>
+
+            {/* Scroll to Top Button */}
+            <button
+              onClick={scrollToTop}
+              className="group relative w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center hover:shadow-lg hover:shadow-blue-500/30 dark:hover:shadow-blue-500/50 transition-all duration-300 hover:scale-110"
+              aria-label="Scroll to top"
+            >
+              <FaArrowUp className="text-white text-lg group-hover:translate-y-1 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-300 blur-lg -z-10"></div>
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Bottom Text */}
-      <div className="mt-10 border-t border-gray-300 dark:border-gray-700 pt-6 text-center text-[11px] sm:text-sm text-gray-600 dark:text-gray-400">
-        Designed & built by Sharear Ahammed Nihal — Powered by React & Tailwind
-        CSS
-      </div>
+      {/* Custom Animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+          50% { opacity: 1; }
+          100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+        .animate-float {
+          animation: float linear infinite;
+        }
+        .delay-1000 {
+          animation-delay: 1000ms;
+        }
+      `}</style>
     </footer>
   );
 };
