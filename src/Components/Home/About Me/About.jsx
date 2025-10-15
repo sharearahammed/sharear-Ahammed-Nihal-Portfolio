@@ -70,7 +70,7 @@ const About = () => {
         </div>
 
         {/* Image Section */}
-        <div data-aos="fade-left" className="flex justify-center items-center">
+        <div className="flex justify-center items-center">
           <div className="relative group">
             <div className="w-[250px] h-[250px] md:w-[350px] md:h-[350px] bg-gradient-to-br from-blue-200 via-white to-blue-100 dark:from-blue-800 dark:via-gray-900 dark:to-blue-900 rounded-full shadow-inner p-2 flex justify-center items-center">
               <img
