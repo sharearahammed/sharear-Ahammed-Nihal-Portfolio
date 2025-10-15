@@ -6,28 +6,26 @@ import { ImSpinner10 } from "react-icons/im";
 import ScrollToTop from "../Components/ScrollTop";
 
 const Main = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setIsLoading(false), 500);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center h-screen bg-white dark:bg-slate-800 transition-colors duration-500">
-        <ImSpinner10 className="animate-spin text-[100px] md:text-[200px] text-[#0077B6]" />
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="flex justify-center items-center h-screen bg-white dark:bg-slate-800 transition-colors duration-500">
+  //       <ImSpinner10 className="animate-spin text-[100px] md:text-[200px] text-[#0077B6]" />
+  //     </div>
+  //   );
+  // }
 
   return (
-    <div className="bg-white dark:bg-slate-800 dark:text-white min-h-screen flex flex-col transition-colors duration-500">
+    <div className="bg-gray-100 dark:bg-slate-800 dark:text-white min-h-screen flex flex-col transition-colors duration-500">
       <ScrollToTop />
-      <div className="max-w-7xl mx-auto px-4">
-        <Navbar />
-      </div>
-      <main className="flex-grow">
+       <Navbar />
+      <main className="flex-grow ">
         <Outlet />
       </main>
       <Footer />

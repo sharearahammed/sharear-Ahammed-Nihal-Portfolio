@@ -10,7 +10,7 @@ const Banner = () => {
   const navigate = useNavigate();
   const isMediumUp = useIsMediumUp();
   return (
-    <div className="gruppo mt-16">
+    <div className="gruppo">
       <div id="home" className="flex justify-center items-center">
         <div className="relative flex justify-center items-center">
           {!isMediumUp ? (
@@ -32,7 +32,7 @@ const Banner = () => {
               <source src="/banner.mp4" type="video/mp4" />
             </video>
           )}
-          <div className="w-full h-full px-4 sm:px-10 xl:px-0 lg:px-16 text-white absolute top-0 grid grid-cols-2 items-center lg:gap-[350px] pt-2 md:pt-6 lg:pt-0 lg:max-w-7xl lg:mx-auto">
+          <div className="max-w-7xl mx-auto px-4 w-full h-full text-white absolute top-0 grid grid-cols-2 items-center lg:gap-[350px] pt-2 md:pt-6 lg:pt-0">
             <div>
               <h1 className="text-[12px] sm:text-[14px] pb-1 md:pb-10 md:text-2xl lg:text-3xl">
                 Hi, I'm <br />

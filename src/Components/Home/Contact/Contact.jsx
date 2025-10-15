@@ -37,15 +37,32 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="pt-24 md:mt-0 md:pt-28 mb-20 md:px-5 lg:px-5">
-      <div className="text-center mb-6 pb-8">
-        <h1 className="text-2xl md:text-5xl font-bold mb-4 text-[#0077B6] dark:text-blue-400">
-          Contact Me
+    <div
+      id="contact"
+      className="pt-24 md:mt-0 md:pt-28 mb-20 max-w-7xl mx-auto px-4"
+    >
+      {/* Header Section */}
+      <div className="relative text-center mb-20" data-aos="fade-down">
+        <h1 className="text-5xl md:text-7xl font-black mb-6">
+          <span className="bg-gradient-to-r from-[#0077B6] via-blue-600 to-cyan-600 dark:from-blue-400 dark:via-blue-300 dark:to-cyan-400 bg-clip-text text-transparent inline-block animate-gradient">
+            Contact Me
+          </span>
         </h1>
-        <p className="text-[14px] md:text-xl">Any questions? Just email me!</p>
+
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-medium">
+          Any questions? Just email me!
+        </p>
+
+        {/* Decorative Line */}
+        <div className="flex items-center justify-center mt-8 gap-4">
+          <div className="h-1 w-16 bg-gradient-to-r from-transparent to-blue-500 rounded-full" />
+          <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" />
+          <div className="h-1 w-16 bg-gradient-to-l from-transparent to-blue-500 rounded-full" />
+        </div>
       </div>
-      <div className="max-w-7xl grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white dark:bg-slate-800 mx-5 sm:mx-5 sm:mx-10 md:mx-auto">
-        <div className="relative bg-[#0077B6] md:col-span-4 py-10 px-5 md:p-10 md:p-10 text-white rounded-lg">
+
+      <div className="grid grid-cols-1 md:grid-cols-12 border rounded-lg bg-white dark:bg-slate-800">
+        <div className="relative bg-[#0077B6] md:col-span-4 py-10 px-5 md:p-10 text-white rounded-lg">
           <p className="mt-4 text-[14px] md:text-xl sm:text-[16px] leading-7 font-regular uppercase">
             Contact Information
           </p>
@@ -100,7 +117,9 @@ const Contact = () => {
             <p className="text-[18px] sm:text-xl">
               <MdOutlineMailOutline />
             </p>
-            <span className="text-[12px] sm:text-sm">sharearahammed@gmail.com</span>
+            <span className="text-[12px] sm:text-sm">
+              sharearahammed@gmail.com
+            </span>
           </div>
           <div className="flex mt-[200px] text-[10px] sm:text-xl md:text-2xl lg:text-3xl">
             <motion.div
@@ -146,7 +165,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="md:col-span-8 px-5 pt-10 sm:pt-10 pb-5  sm:p-10">
+        <div className="md:col-span-8 px-5 pt-10 sm:pt-10 pb-5 sm:p-10">
           <form onSubmit={handleSubmit}>
             <div className="rounded-lg">
               <div className="flex justify-center items-center gap-3">

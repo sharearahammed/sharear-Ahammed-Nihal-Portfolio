@@ -61,7 +61,7 @@ const skillSections = [
       { src: "/tailwind.png", title: "Tailwind" },
       { src: "/redux.svg", title: "Redux" },
       { src: "/mui.png", title: "Material UI" },
-      { src: "/mongodb.svg", title: "MongoDB" }
+      { src: "/mongodb.svg", title: "MongoDB" },
     ],
     // wide: { src: "/mongodb.svg", title: "MongoDB" },
   },
@@ -102,14 +102,26 @@ const Skills = () => {
   }, []);
 
   return (
-    <div id="skills" className="pt-24 md:pt-28 mb-20 px-5 max-w-6xl mx-auto">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#0077B6] tracking-tight mb-2 select-none">
-          My Skills
+    <div className="pt-24 md:pt-28 mb-20 max-w-7xl mx-auto px-4">
+      {/* Header Section */}
+      <div className="relative text-center mb-20" data-aos="fade-down">
+        <h1 className="text-5xl md:text-7xl font-black mb-6">
+          <span className="bg-gradient-to-r from-[#0077B6] via-blue-600 to-cyan-600 dark:from-blue-400 dark:via-blue-300 dark:to-cyan-400 bg-clip-text text-transparent inline-block animate-gradient">
+            My Skills
+          </span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto select-none">
+
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed font-medium">
           Technologies I’ve been working with
+          <br />
         </p>
+
+        {/* Decorative Line */}
+        <div className="flex items-center justify-center mt-8 gap-4">
+          <div className="h-1 w-16 bg-gradient-to-r from-transparent to-blue-500 rounded-full" />
+          <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" />
+          <div className="h-1 w-16 bg-gradient-to-l from-transparent to-blue-500 rounded-full" />
+        </div>
       </div>
 
       {skillSections.map((section, i) => (
